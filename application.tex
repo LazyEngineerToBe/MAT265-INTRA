@@ -1,0 +1,88 @@
+\section{Application des É.D}
+\vspace{-2\baselineskip}
+\subsection*{Cas particuliers}
+
+\subsubsection{Chute libre}
+\raggedright
+Équation du mouvement: \(\frac{dv}{dt}+\frac{k}{m}v=g \;\mid v(0)=v_0\)\\
+Avec:\\
+$k$: coefficient d'amortissement
+\begin{gather*}
+ v\text{: vitesse} \qquad m\text{: masse} \qquad g\text{: } 9.81 m/s^2
+\end{gather*}
+É.D linéaire avec:
+\begin{gather*}
+  p(x)=\frac{k}{m} \qquad  q(x)=g
+\end{gather*}
+Vitesse limite: \(v_\infty = \frac{mg}{k}\)\\\vspace{2.5pt}
+Vitesse instantanée: \[v(t)=v_0 e^{-\frac{k}{m}t}+\frac{mg}{k}(1-e^{-\frac{k}{m}t})\]
+
+\subsubsection*{Circuit RL}
+$V_L = L\frac{di}{dt}$\\\vspace{5pt}
+$V_R=RI$\\\vspace{5pt}
+Loi de kirchoff: \(V_L+V_R=V\)\\
+*On suppose V constant\\\vspace{5pt}
+Équation: \(\frac{di}{dt}=\frac{R}{L}i=\frac{V}{L} |i(o)=i_0\)\\
+É.D de Bernouilli avec:
+\begin{gather*}
+ y=i \qquad p(x)=\frac{R}{L} \qquad q(x)=\frac{V}{L}
+\end{gather*}
+Courant limite: \(i_\infty=\frac{V}{R}\)\\
+Courant instantané: \(i(t)=i_0e^{-\frac{R}{L}t}+\frac{V}{R}(1-e^{-\frac{R}{L}t})\)\\
+$to=\frac{L}{R}=62.2\%$ = constante de temps\\\vspace{5pt}
+$T=5e=99.3\%$ = Temps de réponse\\\vspace{5pt}
+
+\subsubsection*{Circuit RC}
+$V_R = RI = R_C\frac{dV_C}{dt}$\\\vspace{5pt}
+$V_C=\frac{q}{C} = \frac{1}{C}\frac{dq}{dt}$ avec q=charge (coulombs)\\\vspace{5pt}
+$i=\frac{dq}{dt}=C\frac{dV_C}{dt}$\\\vspace{5pt}
+Loi de Kirchoff: $V=V_R+V_C=R_C\frac{dV_C}{dt}+V_C$\\\vspace{5pt}
+Équation caractéristique: \[\frac{dV_C}{dt}+\frac{1}{R_C}V_C=\frac{V}{R_C}\;\mid V_C(0)=V_{C_{0}}\]
+*avec V constant\\
+\begin{gather*}
+    y=V_C \qquad P(x)=\frac{1}{R_C} \qquad q(x)=\frac{V}{R_C}
+\end{gather*}
+$V_C$ limite: \(V_{C_{\infty}} = V\)\\
+$V_C$ instantanée: \(V_C(t)=V_{C_{0}}e^{-\frac{t}{R_C}}+V(1-e^{-\frac{t}{R_C}})\)\\
+On suppose que le condensateur n'était pas chargé $V_C(0)=0$\\
+Tension instantannée: \(V_C(t)=V(1-e^{-\frac{t}{R_C}})\)\\
+$to=RC = 63.21\%$: constante de temps\\
+$T=5RC=99.3\%$: temps de réponse
+
+\subsubsection*{Loi de refroidissement de Newton}
+$T$ = température de l'objet\\
+$M$ = température du milieu\\
+$k$ = coefficient de proportionnalité\\
+\[\frac{dT}{dt}=-k(T-M) \:\mid  k>0\]
+Équation type: \[\frac{dT}{dt}+kT=kM \;\mid T(0)=t_0\]
+\begin{gather*}
+ y=T \qquad   p(x)=k \qquad q(t)=kM
+\end{gather*}
+Température limite: $t_\infty=M$\\
+Température instantannée: \(T(t)=T_0e^{-kt}+M(1-e^{-kt})\)\\
+
+\subsubsection*{Croissance logistique}
+$M$ = population maximale du milieu\\
+$P$ = population\\
+$v$ = variation de la population\\
+Équation type: \(\frac{dv}{dt}+kMv=k \;\mid v(0)=v_0\)
+\begin{gather*}
+ y=v \qquad    P(x)=km>0 \qquad q(x)=k
+\end{gather*}
+Variation limite: \(v\infty=\frac{q}{p}=\frac{k}{kM}=\frac{1}{M}\)\\
+Variation instantanée: \(P(t)=\frac{P_0 M}{M e^{-kMt}+P_0 (1-e^{- k M t})}\)\\
+
+\subsection*{Méthode générale}
+\subsubsection*{Problème type}
+\[\frac{dy}{dt}+Py=Q \;\mid y(0)=y_0, \;P \in\; ] 0,\infty[\;,\; Q \in\; ]-\infty,\infty[\]
+É.D linéaire et séparable\\
+Facteur intégrant: \(\mu(t)=e^{\int P\:dt}\)\\
+Condition initiale: \(y(0)=y_0\)\\
+\(y_0=\frac{q}{p}+Ce^{-pt}\)\\
+\(C=y_0-\frac{q}{p}\)\\
+Solution générale: \(y(t)=\frac{\int e^{pt} Q \:dt+C}{e^{pt}}\)\\
+\(y(t)=y_0e^{-pt}+\frac{q}{p}e^{-pt}\)\\
+Comportement à l'infini: \(y_\infty(t)=\frac{q}{p}\)\\
+donc: \(y(t)=y_0e^{-pt}+y_\infty(1-e^{-pt})\)
+
+

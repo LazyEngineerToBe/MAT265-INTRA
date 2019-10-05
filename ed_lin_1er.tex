@@ -1,0 +1,56 @@
+\section{ÉD séparable}
+\vspace{-2\baselineskip}
+\begin{gather*}
+    N(y)\frac{dy}{dx} = M(x) \quad \Rightarrow \quad N(y) \:dy = M(x) \:dx\\
+    \int N(y) \:dy = \int M(x) \:dx
+\end{gather*}
+
+\section{Équations linéaires d'ordre 1}
+%\vspace{-1\baselineskip}
+\[y'+P(x)y=Q(x)\]
+\centering
+\begin{tabular}{rl}
+ Étape & Formule\\
+ Facteur intégrant & $\mu(x)=e^{\int P(x)dx + C}$ \\
+ Solution générale & $y(x)=\frac{\int \mu (x) Q(x) dx +C}{\mu (x)}$
+\end{tabular}
+
+\section{É.D. de Bernouilli}
+\[y\prime+p(x)y=q(x)y^{n}~~ | n\neq0;1 \]
+\centering
+\begin{tabular}{rl}
+ Étape & Formule\\
+ Facteur intégrant & $\mu(x)=e^{\int(1-n)P(x)dx + C}$ \\
+ Variable auxiliaire & $y(x)=\frac{\int \mu(x)(1-n) Q(x) dx +C}{\mu (x)}$\\
+ Solution générale & $v y^{n-1}=1$
+\end{tabular}
+
+
+\section{É.D. homogène}
+\[\frac{dy}{dx}=f\bigg(\frac{y}{x}\bigg)\]
+\centering
+\begin{tabular}{rl}
+ Étape & Formule\\
+ Variable auxiliaire & $\int \frac{1}{f(v)-v}dv = \ln|x|+C$\\
+ Solution générale & \\
+ Si $v$ explicite & $y(x)=xv(x)$\\
+ Si $v$ implicite & $v=\frac{y}{x}$
+\end{tabular}
+
+
+\section{É.D. exacte}
+\[M(x,y)dx+N(x,y)dy=0\]
+\raggedright
+Vérification si É.D. est exacte:\\\vspace{5pt}
+Si $\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}$ alors l'É.D. est exacte.
+\\\vspace{5pt}
+Sinon:\\\vspace{5pt}
+Si $\frac{1}{N}\bigg(\frac{\partial M}{\partial y}-\frac{\partial N}{\partial x}\bigg)=f(x)$ alors $\mu(x)=e^{\int f(x)dx}$\\\vspace{5pt}
+ Si $\frac{1}{M}\bigg(\frac{\partial N}{\partial x}-\frac{\partial M}{\partial y}\bigg)=g(y)$ alors $\mu(y)=e^{\int g(y)dy}$\\\vspace{5pt}
+L'É.D. $\mu M dx+\mu Ndy=0 $ est une É.D. exacte.
+
+% \frac{\partial V}{\partial x}\Leftrightarrow
+% $\frac{\partial V}{\partial y}\Leftrightarrow
+
+\[\left \{\begin{matrix} \frac{\partial V}{\partial x}=M\\\\ \frac{\partial V}{\partial y}=N \end{matrix}\right.\Leftrightarrow 
+\left \{\begin{matrix} V(x,y)=\int Mdx+C_1(y)\\\\ V(x,y)=\int Ndy+C_2(x) \end{matrix}\right.\]

@@ -1,0 +1,75 @@
+\section{Équations linéaires d'ordre 2}
+\[Ay''+By'+Cy = f(x) \thickspace|A\neq 0\]
+
+\subsection{Solution générale \hfill}
+\[y(x)=y_C+y_P\]
+
+\subsection{Solution complémentaire $y_C$ \hfill}
+Équation caractéristique:
+\[A\lambda^2+B\lambda+C=0\]
+Utiliser cSolve()\\
+$1^{er}$ cas:~~$b^2-4ac >0$\\
+
+\centering
+$\lambda_1$ et $\lambda_2$ deux racines réelles
+\[y(x)=C_1e^{\lambda_1x}+C_2e^{\lambda_2x}\]
+
+\raggedright
+$2^{\textrm{ème}}$ cas:~~$b^2-4ac=0$\\
+
+\centering
+$\lambda=-b/2a$ racine double
+\[y(x)=C_1e^{\lambda x}+C_2xe^{\lambda x}\]
+
+\raggedright
+$3^{\textrm{ème}}$ cas:~~$b^2-4ac<0$\\
+
+\centering
+$\lambda=\alpha\pm \mathbf{i} \beta$
+\[y(x)=C_1e^{\alpha x}\cos(\beta x)+C_2e^{\alpha x}\sin(\beta x)\]
+\end{multicols*}
+
+%\break
+
+\subsection{Solution particulière $y_P$}
+
+\begin{tabular}{c|l}
+$f(x)$ & Candidat à priori\\\hline
+$e^{\alpha x}$ & $Ae^{\alpha x}$\\
+$\cos(\omega x)$, $\sin(\omega x)$ & $A\cos(\omega x)+B\sin(\omega x)$\\
+$P_{n}(x)=a_n x^n+\dots+a_1 x+a_0\thickspace|a_n\neq0$ & $A_n x^n+A_{n-1} x^{n-1}+\dots+A_1 x+A_0$\\
+$e^{\alpha x}\cos(\omega x)$, $e^{\alpha x}\sin(\omega x)$ & $A e^{\alpha x}\cos(\omega x)+B e^{\alpha x}\sin(\omega x)$\\
+$P_n (x)e^{\alpha x}$ & $(A_n x^n+A_{n-1} x^{n-1}+\dots+A_1 x+A_0)e^{\alpha x}$\\
+$P_n \cos(\omega x)$, $P_n \sin(\omega x)$ & $(A_n x^n+A_1 x+A_0)\cos(\omega x)+(B_n x^n+B_1 x+B_0)\sin(\omega x)$
+\end{tabular}
+
+\begin{multicols*}{2}
+\raggedright
+{\scshape Exception:} Si le candidat à priori fait partie de $y_c$, on le multiplie par la variable indépendante autant de fois que nécessaire.
+
+
+
+Résoudre:
+\[ A\frac{d^2 y_p}{d^2 x}+B\frac{d y_p}{dx}+C y_p = f(x)\]
+On trouve $A$ et $B$ et on remplace dans le candidat $y_p$
+
+
+
+
+\section{Variation des paramètres}
+\vspace{-2\baselineskip}
+\[ y_p=C_1 (x) y_1 + C_2 (x) y_2\]
+\[
+W(y_1,y_2) =
+\begin{vmatrix}
+y_1 & y_2\\
+y_1^{\prime} & y_2^{\prime}
+\end{vmatrix}
+=
+(y_1)(y_2^{\prime}) - (y_1^{\prime})(y_2)
+\]
+Si $W(y_1,y_2) \neq 0$ alors:
+\begin{equation*}
+    y_p (x)=-y_1(x)\int \frac{y_2(x)r(x)}{W(y_1,y_2)}\:dx+y_2(x)\int\frac{y_1(x)r(x)}{W(y_1,y_2)}\:dx
+\end{equation*}
+
